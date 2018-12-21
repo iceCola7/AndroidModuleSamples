@@ -24,7 +24,7 @@ ext {
             "appcompatv7"      : "com.android.support:appcompat-v7:${dependVersion.androidSupportSdkVersion}",
             "cardview"         : "com.android.support:cardview-v7:${dependVersion.androidSupportSdkVersion}",
             "design"           : "com.android.support:design:${dependVersion.androidSupportSdkVersion}",
-            "constraint-layout": "com.android.support.constraint:constraint-layout:1.1.2",
+            "constraint-layout": "com.android.support.constraint:constraint-layout:1.1.3",
             "annotations"      : "com.android.support:support-annotations:${dependVersion.androidSupportSdkVersion}"
     ]
 

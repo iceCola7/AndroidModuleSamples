@@ -1,1 +1,1 @@
-include ':app', ':baselibs'
+include ':app', ':baselibs', ':module_news', ':module_me', ':module_video'
