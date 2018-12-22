@@ -8,6 +8,7 @@ kapt {
     arguments {
         arg("AROUTER_MODULE_NAME", project.getName())
     }
+    generateStubs = true
 }
 
 android {
@@ -32,15 +33,14 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation rootProject.ext.testDeps["junit"]
     androidTestImplementation rootProject.ext.testDeps["runner"]
     androidTestImplementation rootProject.ext.testDeps["espresso-core"]
     implementation project(':baselibs')
     if (!isModule.toBoolean()) {
         implementation project(':module_news')
-        //implementation project(':module_video')
-        //implementation project(':module_me')
+        implementation project(':module_video')
+        implementation project(':module_me')
     }
     kapt 'com.alibaba:arouter-compiler:1.2.1'
 }

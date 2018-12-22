@@ -13,8 +13,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        button.setOnClickListener {
+        btn_news.setOnClickListener {
             ARouter.getInstance().build("/news/main").navigation()
+        }
+        btn_video.setOnClickListener {
+            ARouter.getInstance().build("/video/main").navigation()
+        }
+        btn_me.setOnClickListener {
+            ARouter.getInstance().build("/me/main").navigation()
         }
 
     }
