@@ -1,12 +1,11 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'//kotlin扩展
-apply plugin: 'kotlin-kapt'//
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
-//每个module都要添加
 kapt {
     arguments {
-        arg("moduleName", project.getName())
+        arg("AROUTER_MODULE_NAME", project.getName())
     }
 }
 android {
@@ -64,7 +63,7 @@ dependencies {
     api "com.github.ybq:Android-SpinKit:1.2.0"
     // arouter
     api 'com.alibaba:arouter-api:1.4.0'
-    annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
+    kapt 'com.alibaba:arouter-compiler:1.2.1'
 
 }
 
