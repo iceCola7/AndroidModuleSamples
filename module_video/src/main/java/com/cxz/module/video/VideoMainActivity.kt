@@ -20,7 +20,7 @@ class VideoMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         ARouter.getInstance().inject(this)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_video_main)
+        setContentView(R.layout.video_activity_video_main)
 
         showToast("key1: $key1, key2: $key2")
 

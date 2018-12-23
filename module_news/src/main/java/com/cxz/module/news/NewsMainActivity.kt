@@ -20,7 +20,7 @@ class NewsMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         ARouter.getInstance().inject(this)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_news_main)
+        setContentView(R.layout.news_activity_news_main)
 
         showToast("key1: $key1, key2: $key2")
 
