@@ -61,5 +61,5 @@ dependencies {
     androidTestImplementation rootProject.ext.testDeps["runner"]
     androidTestImplementation rootProject.ext.testDeps["espresso-core"]
     implementation project(':baselibs')
-    kapt 'com.alibaba:arouter-compiler:1.2.1'
+    kapt rootProject.ext.otherDeps["arouter-compiler"]
 }

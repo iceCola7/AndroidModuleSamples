@@ -42,5 +42,5 @@ dependencies {
         implementation project(':module_video')
         implementation project(':module_me')
     }
-    kapt 'com.alibaba:arouter-compiler:1.2.1'
+    kapt rootProject.ext.otherDeps["arouter-compiler"]
 }

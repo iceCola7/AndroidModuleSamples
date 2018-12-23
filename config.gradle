@@ -56,8 +56,22 @@ ext {
             "debug-db"                 : 'com.amitshekhar.android:debug-db:1.0.4'
     ]
 
+    commonDeps = [
+            "multidex": 'com.android.support:multidex:1.0.3',
+            "logger"  : 'com.orhanobut:logger:2.2.0',
+            "glide"   : 'com.github.bumptech.glide:glide:4.8.0',
+            "eventbus": 'org.greenrobot:eventbus:3.1.1',
+            "spinkit" : 'com.github.ybq:Android-SpinKit:1.2.0',
+            "arouter" : 'com.alibaba:arouter-api:1.4.0'
+    ]
+
+    otherDeps = [
+            "arouter-compiler": 'com.alibaba:arouter-compiler:1.2.1'
+    ]
+
     supportLibs = supportDeps.values()
     networkLibs = retrofit.values()
     rxJavaLibs = rxJava.values()
+    commonLibs = commonDeps.values()
 
 }
