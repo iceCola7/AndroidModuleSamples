@@ -20,7 +20,7 @@ android {
 
     }
 
-    resourcePrefix "${project.getName()}_"
+    // resourcePrefix "base_"
 
     buildTypes {
         release {
