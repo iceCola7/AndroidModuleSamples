@@ -1,14 +1,16 @@
 package com.cxz.module.video
 
-import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import com.cxz.kotlin.baselibs.base.BaseMvpActivity
 import com.cxz.kotlin.baselibs.ext.showToast
+import com.cxz.module.news.mvp.contract.VideoMainContract
+import com.cxz.module.news.mvp.persenter.VideoMainPresenter
 
 @Route(path = "/video/main")
-class VideoMainActivity : AppCompatActivity() {
+class VideoMainActivity : BaseMvpActivity<VideoMainContract.View, VideoMainContract.Presenter>()
+    , VideoMainContract.View {
 
     @Autowired
     @JvmField
@@ -17,12 +19,19 @@ class VideoMainActivity : AppCompatActivity() {
     @JvmField
     var key2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun createPresenter(): VideoMainContract.Presenter = VideoMainPresenter()
+
+    override fun attachLayoutRes(): Int = R.layout.video_activity_video_main
+
+    override fun initView() {
         ARouter.getInstance().inject(this)
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.video_activity_video_main)
+        super.initView()
 
         showToast("key1: $key1, key2: $key2")
 
     }
+
+    override fun start() {
+    }
+
 }
