@@ -18,7 +18,7 @@ kapt {
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
-        if (isModule.toBoolean()){
+        if (isModule.toBoolean()) {
             applicationId "com.cxz.module.news"
         }
         minSdkVersion rootProject.ext.android.minSdkVersion
@@ -28,6 +28,8 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
+
+    resourcePrefix "news_"
 
     sourceSets {
         main {

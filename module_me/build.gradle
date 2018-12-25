@@ -29,6 +29,8 @@ android {
 
     }
 
+    resourcePrefix "me_"
+
     sourceSets {
         main {
             if (isModule.toBoolean()) {

@@ -29,6 +29,8 @@ android {
 
     }
 
+    resourcePrefix "video_"
+
     sourceSets {
         main {
             if (isModule.toBoolean()) {

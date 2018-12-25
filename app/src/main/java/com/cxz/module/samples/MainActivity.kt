@@ -7,7 +7,7 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.cxz.kotlin.baselibs.ext.showToast
 import com.cxz.module.news.NewsService
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.app_activity_main.*
 
 @Route(path = "/app/main")
 class MainActivity : AppCompatActivity() {
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         ARouter.getInstance().inject(this)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.app_activity_main)
 
         btn_news.setOnClickListener {
             ARouter.getInstance().build("/news/main")

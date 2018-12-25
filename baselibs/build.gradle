@@ -20,6 +20,8 @@ android {
 
     }
 
+    resourcePrefix "${project.getName()}_"
+
     buildTypes {
         release {
             minifyEnabled false
