@@ -1,14 +1,22 @@
 package com.cxz.module.me
 
-import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.cxz.kotlin.baselibs.base.BaseMvpActivity
+import com.cxz.module.me.mvp.contract.MeMainContract
+import com.cxz.module.news.mvp.persenter.MeMainPresenter
 
 @Route(path = "/me/main")
-class MeMainActivity : AppCompatActivity() {
+class MeMainActivity : BaseMvpActivity<MeMainContract.View, MeMainContract.Presenter>(), MeMainContract.View {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.me_activity_me_main)
+    override fun initView() {
+        super.initView()
     }
+
+    override fun start() {
+    }
+
+    override fun createPresenter(): MeMainContract.Presenter = MeMainPresenter()
+
+    override fun attachLayoutRes(): Int = R.layout.me_activity_me_main
+
 }

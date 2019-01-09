@@ -22,22 +22,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.app_activity_main)
 
         btn_news.setOnClickListener {
-            ARouter.getInstance().build("/news/main")
-                .withString("key1", "test_key1")
-                .withString("key2", "test_key2")
-                .navigation()
+            ARouter.getInstance().build("/news/main") // 目标页面
+                    .withString("key1", "test_key1")  // 参数
+                    .withString("key2", "test_key2")  // 参数
+                    .navigation()
         }
         btn_video.setOnClickListener {
             val bundle = Bundle()
             bundle.putString("key1", "test_key1")
             bundle.putString("key2", "test_key2")
             ARouter.getInstance().build("/video/main")
-                .with(bundle)
-                .navigation()
+                    .with(bundle)
+                    .navigation()
         }
         btn_me.setOnClickListener {
             ARouter.getInstance().build("/me/main")
-                .navigation()
+                    .navigation()
         }
         btn_news_service.setOnClickListener {
             showToast(newsService?.getNewsName().toString())

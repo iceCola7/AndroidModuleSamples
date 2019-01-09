@@ -9,8 +9,7 @@ import com.cxz.module.news.mvp.contract.VideoMainContract
 import com.cxz.module.news.mvp.persenter.VideoMainPresenter
 
 @Route(path = "/video/main")
-class VideoMainActivity : BaseMvpActivity<VideoMainContract.View, VideoMainContract.Presenter>()
-    , VideoMainContract.View {
+class VideoMainActivity : BaseMvpActivity<VideoMainContract.View, VideoMainContract.Presenter>(), VideoMainContract.View {
 
     @Autowired
     @JvmField
@@ -18,10 +17,6 @@ class VideoMainActivity : BaseMvpActivity<VideoMainContract.View, VideoMainContr
     @Autowired
     @JvmField
     var key2: String? = null
-
-    override fun createPresenter(): VideoMainContract.Presenter = VideoMainPresenter()
-
-    override fun attachLayoutRes(): Int = R.layout.video_activity_video_main
 
     override fun initView() {
         ARouter.getInstance().inject(this)
@@ -33,5 +28,9 @@ class VideoMainActivity : BaseMvpActivity<VideoMainContract.View, VideoMainContr
 
     override fun start() {
     }
+
+    override fun createPresenter(): VideoMainContract.Presenter = VideoMainPresenter()
+
+    override fun attachLayoutRes(): Int = R.layout.video_activity_video_main
 
 }

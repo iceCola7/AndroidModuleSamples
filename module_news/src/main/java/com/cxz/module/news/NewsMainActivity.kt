@@ -9,8 +9,7 @@ import com.cxz.module.news.mvp.contract.NewsMainContract
 import com.cxz.module.news.mvp.persenter.NewsMainPresenter
 
 @Route(path = "/news/main")
-class NewsMainActivity : BaseMvpActivity<NewsMainContract.View, NewsMainContract.Presenter>()
-    , NewsMainContract.View {
+class NewsMainActivity : BaseMvpActivity<NewsMainContract.View, NewsMainContract.Presenter>(), NewsMainContract.View {
 
     @Autowired
     @JvmField
@@ -19,19 +18,17 @@ class NewsMainActivity : BaseMvpActivity<NewsMainContract.View, NewsMainContract
     @JvmField
     var key2: String? = null
 
-    override fun createPresenter(): NewsMainContract.Presenter = NewsMainPresenter()
-
-    override fun attachLayoutRes(): Int = R.layout.news_activity_news_main
-
     override fun initView() {
         ARouter.getInstance().inject(this)
         super.initView()
-
         showToast("key1: $key1, key2: $key2")
-
     }
 
     override fun start() {
     }
+
+    override fun createPresenter(): NewsMainContract.Presenter = NewsMainPresenter()
+
+    override fun attachLayoutRes(): Int = R.layout.news_activity_news_main
 
 }
