@@ -105,7 +105,6 @@ dependencies {
 }
 ```
 
-
 **4）配置文件 `config.gradle` ，对项目中的第三库、 `app` 的版本等配置**
 
 ```
@@ -206,7 +205,7 @@ kapt {
     generateStubs = true
 }
 dependencies {
-	...
+...
     kapt rootProject.ext.otherDeps["arouter-compiler"]
 }
 ```
@@ -243,7 +242,7 @@ dependencies {
 
 ```
 android {
-	...
+...
     sourceSets {
         main {
             if (isModule.toBoolean()) {
@@ -260,7 +259,7 @@ android {
             }
         }
     }
-	...
+...
 }
 ```
 
@@ -270,15 +269,19 @@ android {
 
 不同业务组件里的资源文件的名称可能相同，所以就可能出现资源文件冲突的问题，我们可以通过设置资源的前缀来防止资源文件的冲突。
 
+![](/art/08.png)
+
 **gradle 配置，以 module_news 模块为例**
 
 ```
 android {
-	...
+...
     resourcePrefix "news_"
-	...
+...
 }
 ```
+
+这样配置以后，如果我们在命名资源文件没有加前缀的时候，编译器就会提示我们没加前缀。
 
 **至此， `Android` 基本组件化框架已经搭建完成，如有错误之处还请指正。**
 
