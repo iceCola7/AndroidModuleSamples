@@ -16,11 +16,11 @@ kapt {
 }
 
 android {
-    if (isModule.toBoolean()) {
-        applicationId "com.cxz.module.me"
-    }
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
+        if (isModule.toBoolean()) {
+            applicationId "com.cxz.module.me"
+        }
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode 1
