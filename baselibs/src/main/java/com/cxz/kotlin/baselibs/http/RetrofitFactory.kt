@@ -4,8 +4,8 @@ import com.cxz.kotlin.baselibs.BuildConfig
 import com.cxz.kotlin.baselibs.app.BaseApp
 import com.cxz.kotlin.baselibs.http.constant.HttpConstant
 import com.cxz.kotlin.baselibs.http.interceptor.CacheInterceptor
+import com.cxz.kotlin.baselibs.http.interceptor.CookieInterceptor
 import com.cxz.kotlin.baselibs.http.interceptor.HeaderInterceptor
-import com.cxz.kotlin.baselibs.http.interceptor.SaveCookieInterceptor
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -76,7 +76,7 @@ abstract class RetrofitFactory<T> {
         builder.run {
             addInterceptor(httpLoggingInterceptor)
             addInterceptor(HeaderInterceptor())
-            addInterceptor(SaveCookieInterceptor())
+            addInterceptor(CookieInterceptor())
             addInterceptor(CacheInterceptor())
             cache(cache)  //添加缓存
             connectTimeout(HttpConstant.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
