@@ -48,6 +48,11 @@ dependencies {
     testImplementation rootProject.ext.testDeps["junit"]
     androidTestImplementation rootProject.ext.testDeps["runner"]
     androidTestImplementation rootProject.ext.testDeps["espresso-core"]
+
+    // leakCanary
+    debugImplementation rootProject.ext.testDeps["leakcanary-debug"]
+    releaseImplementation rootProject.ext.testDeps["leakcanary-release"]
+
     implementation project(':baselibs')
     if (!isModule.toBoolean()) {
         implementation project(':module_news')
