@@ -263,7 +263,7 @@ android {
 }
 ```
 
-**注意：集成模式下的 AndroidManifest 不需要配置 Application ，组件模式下的 AndroidManifest 需要单独配置 Application ，并且必须继承 BaseApp 。**
+**注意：集成模式下的 AndroidManifest 不需要配置 Application ，组件模式下的 AndroidManifest 需要单独配置 Application 。**
 
 #### 2、资源文件冲突的问题
 
