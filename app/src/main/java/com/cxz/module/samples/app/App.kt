@@ -1,12 +1,12 @@
 package com.cxz.module.samples.app
 
 import android.app.Activity
+import android.app.Application
 import android.content.Context
 import android.os.Bundle
 import android.support.multidex.MultiDex
 import com.alibaba.android.arouter.launcher.ARouter
 import com.cxz.kotlin.baselibs.BuildConfig
-import com.cxz.kotlin.baselibs.app.BaseApp
 import com.cxz.kotlin.baselibs.utils.NLog
 import com.squareup.leakcanary.LeakCanary
 import com.squareup.leakcanary.RefWatcher
@@ -16,7 +16,7 @@ import com.squareup.leakcanary.RefWatcher
  * @date 2018/12/22
  * @desc
  */
-class App : BaseApp() {
+class App : Application() {
 
     private val TAG = "App"
 

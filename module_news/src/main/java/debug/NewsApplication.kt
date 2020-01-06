@@ -1,13 +1,13 @@
 package debug
 
-import com.cxz.kotlin.baselibs.app.BaseApp
+import android.app.Application
 
 /**
  * @author chenxz
  * @date 2018/12/22
  * @desc
  */
-class NewsApplication : BaseApp() {
+class NewsApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()

@@ -1,6 +1,6 @@
 package com.cxz.kotlin.baselibs.http.interceptor
 
-import com.cxz.kotlin.baselibs.app.BaseApp
+import com.cxz.kotlin.baselibs.config.AppConfig
 import com.cxz.kotlin.baselibs.utils.NetWorkUtil
 import okhttp3.CacheControl
 import okhttp3.Interceptor
@@ -15,13 +15,13 @@ class CacheInterceptor : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         var request = chain.request()
-        if (!NetWorkUtil.isConnected(BaseApp.instance)) {
+        if (!NetWorkUtil.isConnected(AppConfig.getApplication())) {
             request = request.newBuilder()
                     .cacheControl(CacheControl.FORCE_CACHE)
                     .build()
         }
         val response = chain.proceed(request)
-        if (NetWorkUtil.isConnected(BaseApp.instance)) {
+        if (NetWorkUtil.isConnected(AppConfig.getApplication())) {
             val maxAge = 0
             // 有网络时 设置缓存超时时间0个小时 ,意思就是不读取缓存数据,只对get有用,post没有缓冲
             response.newBuilder()
