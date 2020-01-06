@@ -3,7 +3,7 @@ package com.cxz.kotlin.baselibs.http.cookies
 import android.content.Context
 import android.content.SharedPreferences
 import android.text.TextUtils
-import com.cxz.kotlin.baselibs.app.BaseApp
+import com.cxz.kotlin.baselibs.config.AppConfig
 import com.cxz.kotlin.baselibs.utils.NLog
 import okhttp3.Cookie
 import okhttp3.HttpUrl
@@ -24,7 +24,8 @@ class PersistentCookieStore {
     private val cookiePrefs: SharedPreferences
 
     init {
-        cookiePrefs = BaseApp.instance.getSharedPreferences(COOKIE_PREFS, Context.MODE_PRIVATE)
+        cookiePrefs =
+            AppConfig.getApplication().getSharedPreferences(COOKIE_PREFS, Context.MODE_PRIVATE)
         var prefsMap = cookiePrefs.all
 
 
@@ -184,7 +185,10 @@ class PersistentCookieStore {
         val data = ByteArray(len / 2)
         var i = 0
         while (i < len) {
-            data[i / 2] = ((Character.digit(hexString[i], 16) shl 4) + Character.digit(hexString[i + 1], 16)).toByte()
+            data[i / 2] = ((Character.digit(hexString[i], 16) shl 4) + Character.digit(
+                hexString[i + 1],
+                16
+            )).toByte()
             i += 2
         }
         return data
