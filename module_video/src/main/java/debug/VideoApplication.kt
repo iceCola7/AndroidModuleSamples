@@ -1,6 +1,7 @@
 package debug
 
 import android.app.Application
+import com.cxz.kotlin.baselibs.config.AppConfig
 
 
 /**
@@ -12,6 +13,7 @@ class VideoApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        AppConfig.init(this)
     }
 
 }
