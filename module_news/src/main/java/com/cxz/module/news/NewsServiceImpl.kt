@@ -2,6 +2,7 @@ package com.cxz.module.news
 
 import android.content.Context
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.cxz.kotlin.baselibs.provider.NewsService
 
 /**
  * @author chenxz

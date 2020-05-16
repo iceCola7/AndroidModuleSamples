@@ -1,4 +1,4 @@
-package com.cxz.module.news
+package com.cxz.kotlin.baselibs.provider
 
 import com.alibaba.android.arouter.facade.template.IProvider
 
