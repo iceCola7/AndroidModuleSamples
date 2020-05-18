@@ -54,10 +54,19 @@ dependencies {
     releaseImplementation rootProject.ext.testDeps["leakcanary-release"]
 
     implementation project(':baselibs')
-    if (!isModule.toBoolean()) {
-        implementation project(':module_news')
-        implementation project(':module_video')
+    kapt rootProject.ext.otherDeps["arouter-compiler"]
+//    if (!isModule.toBoolean()) {
+//        implementation project(':module_news')
+//        implementation project(':module_video')
+//        implementation project(':module_me')
+//    }
+    if (!isMeModule.toBoolean()){
         implementation project(':module_me')
     }
-    kapt rootProject.ext.otherDeps["arouter-compiler"]
+    if (!isNewsModule.toBoolean()){
+        implementation project(':module_news')
+    }
+    if (!isVideoModule.toBoolean()){
+        implementation project(':module_video')
+    }
 }

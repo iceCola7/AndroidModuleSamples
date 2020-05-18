@@ -1,4 +1,4 @@
-if (isModule.toBoolean()) {
+if (isNewsModule.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
@@ -18,7 +18,7 @@ kapt {
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
-        if (isModule.toBoolean()) {
+        if (isNewsModule.toBoolean()) {
             applicationId "com.cxz.module.news"
         }
         minSdkVersion rootProject.ext.android.minSdkVersion
@@ -33,7 +33,7 @@ android {
 
     sourceSets {
         main {
-            if (isModule.toBoolean()) {
+            if (isNewsModule.toBoolean()) {
                 manifest.srcFile 'src/main/module/AndroidManifest.xml'
             } else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
