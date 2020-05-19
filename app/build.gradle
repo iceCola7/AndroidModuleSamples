@@ -53,8 +53,9 @@ dependencies {
     debugImplementation rootProject.ext.testDeps["leakcanary-debug"]
     releaseImplementation rootProject.ext.testDeps["leakcanary-release"]
 
-    implementation project(':baselibs')
     kapt rootProject.ext.otherDeps["arouter-compiler"]
+
+    // implementation project(':baselibs')
 //    if (!isModule.toBoolean()) {
 //        implementation project(':module_news')
 //        implementation project(':module_video')

@@ -62,6 +62,6 @@ dependencies {
     testImplementation rootProject.ext.testDeps["junit"]
     androidTestImplementation rootProject.ext.testDeps["runner"]
     androidTestImplementation rootProject.ext.testDeps["espresso-core"]
-    implementation project(':baselibs')
+    api project(':baselibs')
     kapt rootProject.ext.otherDeps["arouter-compiler"]
 }
