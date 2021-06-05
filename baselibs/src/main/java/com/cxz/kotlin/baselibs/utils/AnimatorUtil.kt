@@ -1,10 +1,10 @@
 package com.cxz.kotlin.baselibs.utils
 
-import android.support.v4.view.ViewCompat
-import android.support.v4.view.ViewPropertyAnimatorListener
-import android.support.v4.view.animation.LinearOutSlowInInterpolator
 import android.view.View
 import android.view.animation.AccelerateInterpolator
+import androidx.core.view.ViewCompat
+import androidx.core.view.ViewPropertyAnimatorListener
+import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
 
 /**
  * Created by chenxz on 2018/5/13.

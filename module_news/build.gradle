@@ -25,7 +25,7 @@ android {
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
     }
 
@@ -63,5 +63,5 @@ dependencies {
     androidTestImplementation rootProject.ext.testDeps["runner"]
     androidTestImplementation rootProject.ext.testDeps["espresso-core"]
     api project(':baselibs')
-    kapt rootProject.ext.otherDeps["arouter-compiler"]
+    kapt rootProject.ext.annotationProcessorDeps["arouter-compiler"]
 }

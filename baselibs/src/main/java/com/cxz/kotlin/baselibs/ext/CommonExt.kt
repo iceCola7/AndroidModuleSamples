@@ -5,16 +5,16 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.Resources
 import android.net.Uri
-import android.support.design.widget.Snackbar
-import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
 import android.view.View
 import android.widget.Checkable
 import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.cxz.kotlin.baselibs.R
 import com.cxz.kotlin.baselibs.config.AppConfig
 import com.cxz.kotlin.baselibs.utils.NLog
 import com.cxz.kotlin.baselibs.widget.CustomToast
+import com.google.android.material.snackbar.Snackbar
 
 /**
  * @author chenxz
@@ -49,7 +49,8 @@ fun Activity.showSnackMsg(msg: String) {
 
 fun Fragment.showSnackMsg(msg: String) {
     this.activity ?: return
-    val snackbar = Snackbar.make(this.activity!!.window.decorView, msg, Snackbar.LENGTH_SHORT)
+    val snackbar =
+        Snackbar.make(this.activity!!.window.decorView, msg, com.google.android.material.snackbar.Snackbar.LENGTH_SHORT)
     val view = snackbar.view
     view.findViewById<TextView>(R.id.snackbar_text)
         .setTextColor(ContextCompat.getColor(this.activity!!, R.color.white))

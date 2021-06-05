@@ -2,12 +2,12 @@ package com.cxz.kotlin.baselibs.base
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle
-import android.support.annotation.ColorInt
-import android.support.annotation.LayoutRes
-import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.WindowManager
+import androidx.annotation.ColorInt
+import androidx.annotation.LayoutRes
+import androidx.appcompat.app.AppCompatActivity
 import com.cxz.kotlin.baselibs.utils.CommonUtil
 import com.cxz.kotlin.baselibs.utils.KeyBoardUtil
 import com.cxz.kotlin.baselibs.utils.StatusBarUtil
@@ -98,8 +98,8 @@ abstract class BaseActivity : AppCompatActivity() {
         return super.dispatchTouchEvent(ev)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed()
             }
